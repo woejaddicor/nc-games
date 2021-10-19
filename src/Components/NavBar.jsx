@@ -8,19 +8,24 @@ const NavBar = () => {
 
     useEffect(() => {
         getCategories().then((categoriesFromApi) => {
+            console.log(categoriesFromApi);
            setCategories(categoriesFromApi);
         })
         .catch((error) => {
-            console.log(error);
+            console.dir(error);
         });
     }, []);
 
     return (
         <nav className="navBar">
-            <ul>
+          <ul className="categories-list">
             {categories.map((category) => {
-                return <Link>{category.slug_name}</Link>
-            })}
+                 return (
+                     <li className="categories-list-items" key={category.slug}>
+                 <Link className="categories-links" to={`/categories/${category.slug}`}>{category.slug}</Link>
+                 </li>
+                 )
+             })}
             </ul>
         </nav>
     )

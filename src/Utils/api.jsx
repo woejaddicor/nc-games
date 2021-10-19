@@ -1,16 +1,26 @@
 import axios from 'axios';
 
 const gamesApi = axios.create({
-    baseUrl: 'https://primero-games.herokuapp.com/api',
+    baseURL: 'https://primero-games.herokuapp.com/api'
 })
 
 export const getCategories = async () => {
     const {data} = await gamesApi.get('/categories')
-    return data.Categories;
+    return data.categories;
 }
 
 export const getAllReviews = async () => {
     const {data} = await gamesApi.get('/reviews')
-    console.log(data);
     return data.reviews;
 }
+
+
+{/* <nav className="navBar">
+          <ul>
+            {categories.map((category) => {
+                 return (
+                 <Link to={`/categories/${category.slug}`}>{category.slug}</Link>
+                 )
+             })}
+            </ul>
+        </nav> */}
