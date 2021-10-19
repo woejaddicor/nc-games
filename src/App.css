@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+.Title {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.navBar {
+  background-color: grey;
+  color: white;
+}
