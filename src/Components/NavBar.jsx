@@ -8,7 +8,6 @@ const NavBar = () => {
 
     useEffect(() => {
         getCategories().then((categoriesFromApi) => {
-            console.log(categoriesFromApi);
            setCategories(categoriesFromApi);
         })
         .catch((error) => {

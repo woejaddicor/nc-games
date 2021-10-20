@@ -1,0 +1,9 @@
+.Title {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.Title :hover {
+  color: rgb(209, 197, 209);
+}

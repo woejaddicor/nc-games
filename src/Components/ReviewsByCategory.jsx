@@ -1,31 +1,33 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { getAllReviews } from "../Utils/api";
-import {Link} from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getReviewsByCategory } from "../Utils/api";
+import { Link } from "react-router-dom";
 
-const AllReviews = () => {
-    const [reviews, setReviews] = useState([]);
+const ReviewsByCategory = () => {
+    const [categoryReviews, setCategoryReviews] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-  
+    
+    const {category} = useParams();
+
     useEffect(() => {
-        setIsLoading(true);
-        getAllReviews().then((reviewsFromApi) => {
-            setReviews(reviewsFromApi)
-            setIsLoading(false)
+        setIsLoading(true)
+        getReviewsByCategory(category).then((reviewsFromApi) => {
+        setCategoryReviews(reviewsFromApi);
+        setIsLoading(false)
         })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, []);
+        .catch((err) => {
+            console.dir(err);
+        })
+    },   
+ [category]);
 
     if (isLoading) {
         return <h1>Content Loading</h1>
     } else {
     return (
-        <section className="allReviews">
-            <h2>All Reviews</h2>
+        <section className="category-reviews">
             <ul className="reviews-list">
-                {reviews.map((review) => {
+                {categoryReviews.map((review) => {
                     return (
                         <li className="reviews-list" key={review.review_id}>
                             <button><Link to={`/reviews/${review.review_id}`}>
@@ -37,17 +39,18 @@ const AllReviews = () => {
                             />
                             <p>{review.designer}</p>
                             <p>{review.owner}</p>
+                            <p>{review.review_body}</p>
                             <p>{review.category}</p>
                             <p>{review.votes}</p>
-                            </Link></button>
+                        </Link></button>
                         </li>
-                    );
+                    )
                 })}
             </ul>
         </section>
-    )  
+    )            
   }
 }
-  
-  export default AllReviews;
-  
+
+
+export default ReviewsByCategory;

@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import TitleHeader from './Components/TitleHeader';
 import AllReviews from './Components/AllReviews';
 import NavBar from './Components/NavBar';
+import ReviewsByCategory from './Components/ReviewsByCategory';
+import ShowSingleReview from './Components/SingleReview';
 
 function App() {
   return (
@@ -16,8 +18,14 @@ function App() {
           <Route exact path="/reviews">
           <AllReviews/>
           </Route>
+          <Route exact path="/categories/:category">
+            <ReviewsByCategory />
+          </Route>
+          <Route exact path="/reviews/:review_id">
+            <ShowSingleReview/>
+          </Route>
           <Route>
-
+            <h1>404- Page not found</h1>
           </Route>
         </Switch>
       </BrowserRouter>

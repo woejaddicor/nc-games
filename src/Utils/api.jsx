@@ -14,13 +14,12 @@ export const getAllReviews = async () => {
     return data.reviews;
 }
 
+export const getReviewsByCategory = async (category) => {
+    const {data} = await gamesApi.get(`/reviews?category=${category}`)
+    return data.reviews;
+}
 
-{/* <nav className="navBar">
-          <ul>
-            {categories.map((category) => {
-                 return (
-                 <Link to={`/categories/${category.slug}`}>{category.slug}</Link>
-                 )
-             })}
-            </ul>
-        </nav> */}
+export const getReview = async (review_id) => {
+    const {data} = await gamesApi.get(`/reviews/${review_id}`)
+    return data.review;  
+}

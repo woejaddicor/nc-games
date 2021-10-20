@@ -1,0 +1,22 @@
+.navBar {
+  background-color: grey;
+  color: white;
+  padding: 5px;
+  width: auto max-content;
+  height: fit-content;
+  background-color: rgb(209, 197, 209);
+  padding: 1px;
+}
+
+.categories-list {
+  color: black;
+  font-weight: bold;
+}
+
+.categories-links {
+  color: black;
+}
+
+.categories-list-items {
+  text-decoration: none;
+}
