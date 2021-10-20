@@ -4,7 +4,7 @@ import TitleHeader from './Components/TitleHeader';
 import AllReviews from './Components/AllReviews';
 import NavBar from './Components/NavBar';
 import ReviewsByCategory from './Components/ReviewsByCategory';
-import ShowSingleReview from './Components/SingleReview';
+import SingleReview from './Components/SingleReview';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
             <ReviewsByCategory />
           </Route>
           <Route exact path="/reviews/:review_id">
-            <ShowSingleReview/>
+            <SingleReview/>
           </Route>
           <Route>
             <h1>404- Page not found</h1>

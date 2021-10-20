@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import {getReview} from '../Utils/api';
+import styles from '../CSS-Components/SingleReview.module.css';
 
 
-const ShowSingleReview = () => { 
+const SingleReview = () => { 
     const [singleGame, setSingleGame] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
@@ -11,6 +12,7 @@ const ShowSingleReview = () => {
 
     useEffect(() => {
         setIsLoading(true)
+        setIsError(false)
         getReview(review_id).then((reviewFromApi) => {
             setSingleGame(reviewFromApi[0]);
             setIsLoading(false);
@@ -24,9 +26,9 @@ const ShowSingleReview = () => {
         return <h1>Content Loading</h1>
     } else {
     return (
-        <section className="single-review">
+        <section className={styles.SingleReview}>
                <h1>{singleGame.title}</h1>
-               <img className="review-images" src={singleGame.review_img_url}
+               <img className={styles.singleReviewImage} src={singleGame.review_img_url}
                     alt={`${singleGame.title}`}/>
                 <p>{singleGame.category}</p>
                 <p>{singleGame.designer}</p>
@@ -38,4 +40,4 @@ const ShowSingleReview = () => {
   }
 }
 
-export default ShowSingleReview;
+export default SingleReview;

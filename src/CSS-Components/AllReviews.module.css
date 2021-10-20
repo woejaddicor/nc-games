@@ -1,0 +1,9 @@
+.reviewImages {
+  height: 250px;
+  width: 250px;
+}
+
+.reviewsList {
+  list-style: none;
+  text-align: center;
+}

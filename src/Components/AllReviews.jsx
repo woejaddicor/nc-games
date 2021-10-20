@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { getAllReviews } from "../Utils/api";
 import {Link} from 'react-router-dom';
+import styles from '../CSS-Components/AllReviews.module.css';
 
 const AllReviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -24,14 +25,14 @@ const AllReviews = () => {
     return (
         <section className="allReviews">
             <h2>All Reviews</h2>
-            <ul className="reviews-list">
+            <ul className={styles.reviewsList}>
                 {reviews.map((review) => {
                     return (
                         <li className="reviews-list" key={review.review_id}>
                             <button><Link to={`/reviews/${review.review_id}`}>
                             <h3>{review.title}</h3>
                             <img
-                                className="review-images"
+                                className={styles.reviewImages}
                                 alt={`${review.title}`}
                                 src={review.review_img_url}
                             />

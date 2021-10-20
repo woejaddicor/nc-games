@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewsByCategory } from "../Utils/api";
 import { Link } from "react-router-dom";
+import styles from '../CSS-Components/ReviewsByCategory.module.css';
 
 const ReviewsByCategory = () => {
     const [categoryReviews, setCategoryReviews] = useState([]);
@@ -26,14 +27,14 @@ const ReviewsByCategory = () => {
     } else {
     return (
         <section className="category-reviews">
-            <ul className="reviews-list">
+            <ul>
                 {categoryReviews.map((review) => {
                     return (
-                        <li className="reviews-list" key={review.review_id}>
+                        <li className={styles.categoryReviewsList} key={review.review_id}>
                             <button><Link to={`/reviews/${review.review_id}`}>
                             <h3>{review.title}</h3>
                             <img
-                                className="review-images"
+                                className={styles.categoryReviewImages}
                                 alt={`${review.title}`}
                                 src={review.review_img_url}
                             />

@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getCategories } from "../Utils/api";
+import styles from '../CSS-Components/NavBar.module.css';
 
 const NavBar = () => {
     const [categories, setCategories] = useState([]);
@@ -16,12 +17,12 @@ const NavBar = () => {
     }, []);
 
     return (
-        <nav className="navBar">
-          <ul className="categories-list">
+        <nav className={styles.navBar}>
+          <ul className={styles.categoriesList}>
             {categories.map((category) => {
                  return (
-                     <li className="categories-list-items" key={category.slug}>
-                 <Link className="categories-links" to={`/categories/${category.slug}`}>{category.slug}</Link>
+                     <li className={styles.categoriesListItems} key={category.slug}>
+                 <Link className={styles.categorieslinks} to={`/categories/${category.slug}`}>{category.slug}</Link>
                  </li>
                  )
              })}

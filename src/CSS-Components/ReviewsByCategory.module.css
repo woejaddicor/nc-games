@@ -1,9 +1,9 @@
-.review-images {
+.categoryReviewImages {
   height: 250px;
   width: 250px;
 }
 
-.reviews-list {
+.categoryReviewsList {
   list-style: none;
   text-align: center;
 }

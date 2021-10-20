@@ -8,15 +8,15 @@
   padding: 1px;
 }
 
-.categories-list {
+.categoriesList {
   color: black;
   font-weight: bold;
 }
 
-.categories-links {
+.categorieslinks {
   color: black;
 }
 
-.categories-list-items {
+.categoriesListItems {
   text-decoration: none;
 }
