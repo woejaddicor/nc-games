@@ -1,9 +1,13 @@
-.Title {
-  background-color: black;
+.title {
+  background-color: rgb(6, 26, 5);
   color: white;
   padding: 10px;
 }
 
-.Title :hover {
-  color: rgb(209, 197, 209);
+.title :hover {
+  color: rgb(166, 255, 166);
+}
+
+.loginForm {
+  color: rgb(166, 255, 166);
 }

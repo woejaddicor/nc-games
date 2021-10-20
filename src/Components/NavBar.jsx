@@ -22,8 +22,8 @@ const NavBar = () => {
             {categories.map((category) => {
                  return (
                      <li className={styles.categoriesListItems} key={category.slug}>
-                 <Link className={styles.categorieslinks} to={`/categories/${category.slug}`}>{category.slug}</Link>
-                 </li>
+                       <button className={styles.categoriesButton}><Link className={styles.categorieslinks} to={`/categories/${category.slug}`}>{category.slug}</Link></button>
+                    </li>
                  )
              })}
             </ul>

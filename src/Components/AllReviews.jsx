@@ -23,13 +23,12 @@ const AllReviews = () => {
         return <h1>Content Loading</h1>
     } else {
     return (
-        <section className="allReviews">
-            <h2>All Reviews</h2>
+        <section className={styles.allReviews}>
             <ul className={styles.reviewsList}>
                 {reviews.map((review) => {
                     return (
-                        <li className="reviews-list" key={review.review_id}>
-                            <button><Link to={`/reviews/${review.review_id}`}>
+                        <li className={styles.reviewsList} key={review.review_id}>
+                            <button className={styles.reviewsButton}><Link className={styles.linkText} to={`/reviews/${review.review_id}`}>
                             <h3>{review.title}</h3>
                             <img
                                 className={styles.reviewImages}

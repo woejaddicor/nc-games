@@ -1,22 +1,26 @@
 .navBar {
-  background-color: grey;
-  color: white;
-  padding: 5px;
   width: auto max-content;
   height: fit-content;
-  background-color: rgb(209, 197, 209);
+  background-color: rgb(80, 109, 90);
   padding: 1px;
 }
 
 .categoriesList {
-  color: black;
-  font-weight: bold;
+  list-style: none;
 }
 
 .categorieslinks {
-  color: black;
+  color: white;
+  font-weight: bolder;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
 }
 
-.categoriesListItems {
-  text-decoration: none;
+.categoriesButton {
+  background-color: rgb(67, 83, 75);
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px double black;
 }

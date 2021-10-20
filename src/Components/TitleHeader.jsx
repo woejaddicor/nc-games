@@ -3,9 +3,9 @@ import styles from '../CSS-Components/TitleHeader.module.css'
 
 const TitleHeader = () => {
     return (
-        <header className={styles.Title}>
-            <h1><Link className="Title" to='/reviews'>NC-GAMES</Link></h1>
-            <form>
+        <header className={styles.title}>
+            <h1 className={styles.banner}><Link className={styles.title} to='/reviews'>NC-GAMES</Link></h1>
+            <form className={styles.loginForm}>
                 <label htmlFor="login">Login</label>
                     <input type="text" id="login" placeholder="Username"/>
                     <button type="submit">Log in!</button>

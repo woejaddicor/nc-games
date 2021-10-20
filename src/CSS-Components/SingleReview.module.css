@@ -1,7 +1,11 @@
-.singleReview {
-  background-color: pink;
-  padding: 5px;
-  font-weight: black;
+.SingleReview {
+  padding: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  word-spacing: 1px;
+  background-color: rgb(245, 245, 230);
+  border: 2px solid rgb(21, 41, 26);
+  border-radius: 5px;
+  margin: 8px;
 }
 
 .singleReviewImage {
@@ -15,6 +19,16 @@
   font-weight: bold;
 }
 
+.commentsButton {
+  font-size: 15px;
+  padding: 5px;
+  width: 90%;
+  height: fit-content;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  list-style: none;
+}
+
 .comments {
   border: 2px solid rgb(182, 181, 181);
   background-color: rgb(221, 255, 198);
@@ -23,4 +37,33 @@
   margin-bottom: 10px;
   border-radius: 10px;
   margin-top: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.commentBox {
+  min-width: 250px;
+  min-height: 80px;
+  border-radius: 5px;
+}
+
+.postCommentButton {
+  width: fit-content;
+  height: 30px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.commentsCollapsible {
+  background-color: rgb(245, 245, 230);
+  padding: 5px;
+  border: 2px solid rgb(9, 34, 16);
+  border-radius: 5px;
+  margin: 8px;
+}
+
+.voteIncButton {
+  width: fit-content;
+  height: 35px;
+  border-radius: 5px;
 }

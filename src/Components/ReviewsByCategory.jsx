@@ -26,12 +26,12 @@ const ReviewsByCategory = () => {
         return <h1>Content Loading</h1>
     } else {
     return (
-        <section className="category-reviews">
-            <ul>
+        <section className={styles.allCategoryReviews}>
+            <ul className={styles.categoryReviewsList}>
                 {categoryReviews.map((review) => {
                     return (
                         <li className={styles.categoryReviewsList} key={review.review_id}>
-                            <button><Link to={`/reviews/${review.review_id}`}>
+                            <button className={styles.categoryReviewButton}><Link className={styles.categoryLinkText} to={`/reviews/${review.review_id}`}>
                             <h3>{review.title}</h3>
                             <img
                                 className={styles.categoryReviewImages}
