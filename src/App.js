@@ -7,6 +7,7 @@ import ReviewsByCategory from './Components/ReviewsByCategory';
 import SingleReview from './Components/SingleReview';
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>

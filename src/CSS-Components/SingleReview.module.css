@@ -8,3 +8,19 @@
   height: 250px;
   width: 250px;
 }
+
+.Collapsible {
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.comments {
+  border: 2px solid rgb(182, 181, 181);
+  background-color: rgb(221, 255, 198);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 5px;
+}

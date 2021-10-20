@@ -40,7 +40,6 @@ const ReviewsByCategory = () => {
                             />
                             <p>{review.designer}</p>
                             <p>{review.owner}</p>
-                            <p>{review.review_body}</p>
                             <p>{review.category}</p>
                             <p>{review.votes}</p>
                         </Link></button>
