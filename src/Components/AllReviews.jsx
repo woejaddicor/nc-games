@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { getAllReviews } from "../Utils/api";
 import {Link} from 'react-router-dom';
 import styles from '../CSS-Components/AllReviews.module.css';
+import { useParams } from "react-router-dom";
 
 const AllReviews = () => {
     const [reviews, setReviews] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [sortOption, setSortOption] = useState();
   
     useEffect(() => {
         setIsLoading(true);
@@ -24,6 +26,12 @@ const AllReviews = () => {
     } else {
     return (
         <section className={styles.allReviews}>
+            <select className={styles.sortDropdown} name="sortOptions" required>
+                <option value="" disabled selected>Sort By</option>
+                <option value="created at">Created At</option>
+                <option value="comment count">Comment Count</option>
+                <option value="milk">Votes</option>
+                </select>
             <ul className={styles.reviewsList}>
                 {reviews.map((review) => {
                     return (

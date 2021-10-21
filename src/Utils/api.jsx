@@ -28,3 +28,9 @@ export const getComments = async (review_id) => {
     const {data} = await gamesApi.get(`/reviews/${review_id}/comments`)
     return data.comments;
 }
+
+export const updateVotes = async (review_id) => {
+    const {data} = await gamesApi.patch(`/reviews/${review_id}`, 
+    {inc_votes: 1})
+    return data;
+}

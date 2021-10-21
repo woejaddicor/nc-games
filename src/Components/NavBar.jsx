@@ -25,7 +25,8 @@ const NavBar = () => {
                        <button className={styles.categoriesButton}><Link className={styles.categorieslinks} to={`/categories/${category.slug}`}>{category.slug}</Link></button>
                     </li>
                  )
-             })}
+                })}
+                <button className={styles.loginButton}><Link className={styles.loginButtonLink} to="/login">Login</Link></button>
             </ul>
         </nav>
     )

@@ -1,33 +1,46 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import {getComments, incVote, getReview} from '../Utils/api';
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import {getComments, getReview, updateComments} from '../Utils/api';
 import styles from '../CSS-Components/SingleReview.module.css';
 import Collapsible from 'react-collapsible'
 
 const SingleReview = () => { 
     const [singleGame, setSingleGame] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [isErr, setIsErr] = useState(false);
+    // const [isErr, setIsErr] = useState(false);
     const {review_id} = useParams();
     const [comments, setComments] = useState([]);
-    const [votes, setVotes] = useState();
+    const [votes, setVotes] = useState(0);
+    // const [postedComment, setPostedComment] = useState('');
     
     useEffect(() => {
         setIsLoading(true)
         getReview(review_id).then((reviewFromApi) => {
             setSingleGame(reviewFromApi[0]);
             setIsLoading(false);
+            setVotes(Number(reviewFromApi[0].votes))
         })
         .catch((err) => {
             console.dir(err)
         });
     }, [review_id]);
 
+
     useEffect(() => {
         getComments(review_id).then((commentsFromApi) => {
             setComments(commentsFromApi);
         })
     }, [review_id]);
+
+    const handleVotes = () => {
+        setVotes((currVotes) => currVotes + 1)
+        
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(e.target.item);
+    }
 
     if (isLoading) {
         return <h1>Content Loading</h1>
@@ -41,13 +54,13 @@ const SingleReview = () => {
                 <p>Category: {singleGame.category}</p>
                 <p>Designer: {singleGame.designer}</p>
                 <p>Created at: {singleGame.created_at}</p>
-                <p>votes: {singleGame.votes}</p><button className={styles.voteIncButton}>Upvote Review</button>
+                <button onClick={handleVotes} className={styles.voteIncButton}>Current Votes: {votes}</button>
                 <p>{singleGame.review_body}</p>
         </section>
         <section className={styles.commentsCollapsible}>
             <h2>Comments</h2>
           <button className={styles.commentsButton}><Collapsible className={styles.Collapsible} trigger="Show all">
-                <form>
+                <form onSubmit={handleSubmit}>
                 <label htmlFor="comment"></label>
                 <input className={styles.commentBox} type="text" id="comment" placeholder="Post your comment"/> 
                 <button className={styles.postCommentButton}>Post Comment</button>

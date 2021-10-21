@@ -1,0 +1,29 @@
+.loginPage {
+  background-color: rgb(222, 255, 206);
+  padding-top: 50px;
+  padding-bottom: 320px;
+}
+
+.loginForm {
+  margin-top: 35%;
+}
+
+.usernameBar {
+  height: 50px;
+  width: 250px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.loginButton {
+  margin-left: 8px;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.label {
+  margin-right: 8px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
