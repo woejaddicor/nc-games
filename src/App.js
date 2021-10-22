@@ -7,16 +7,14 @@ import ReviewsByCategory from './Components/ReviewsByCategory';
 import SingleReview from './Components/SingleReview';
 import Login from './Components/Login';
 import {UserContext} from './Contexts/UserContext';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 function App() {
 
-  const [user, setUser] = useState(null);
-
-  const value = useMemo(() => ({user, setUser}), [user, setUser]);
+  const [user, setUser] = useState('jessjelly');
 
   return (
-  <UserContext.Provider>
+  <UserContext.Provider value={{user, setUser}}>
     <div className="App">
       <BrowserRouter>
         <div className="heading-and-nav">
@@ -41,8 +39,8 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-    </div>
-        </UserContext.Provider>
+        </div>
+      </UserContext.Provider>
   );
 }
 

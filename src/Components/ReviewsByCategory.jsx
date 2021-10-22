@@ -30,20 +30,17 @@ const ReviewsByCategory = () => {
             <ul className={styles.categoryReviewsList}>
                 {categoryReviews.map((review) => {
                     return (
-                        <li className={styles.categoryReviewsList} key={review.review_id}>
                             <button className={styles.categoryReviewButton}><Link className={styles.categoryLinkText} to={`/reviews/${review.review_id}`}>
+                        <li className={styles.categoryReviewsList} key={review.review_id}>
                             <h3>{review.title}</h3>
                             <img
                                 className={styles.categoryReviewImages}
                                 alt={`${review.title}`}
                                 src={review.review_img_url}
                             />
-                            <p>{review.designer}</p>
-                            <p>{review.owner}</p>
-                            <p>{review.category}</p>
-                            <p>{review.votes}</p>
-                        </Link></button>
+                            <h3>{review.category}</h3>
                         </li>
+                        </Link></button>
                     )
                 })}
             </ul>

@@ -11,7 +11,7 @@ export const getCategories = async () => {
 
 export const getAllReviews = async () => {
     const {data} = await gamesApi.get('/reviews')
-    return data.reviews;
+    return data.reviews
 }
 
 export const getReviewsByCategory = async (category) => {
@@ -30,7 +30,9 @@ export const getComments = async (review_id) => {
 }
 
 export const updateVotes = async (review_id) => {
-    const {data} = await gamesApi.patch(`/reviews/${review_id}`, 
-    {inc_votes: 1})
-    return data;
+    await gamesApi.patch(`/reviews/${review_id}`, {inc_votes: 1})
+}
+
+export const updateComments = async (review_id, username, body) => {
+    await gamesApi.post(`/reviews/${review_id}/comments`, {username, body})
 }
