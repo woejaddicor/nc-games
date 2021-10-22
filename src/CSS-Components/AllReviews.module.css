@@ -48,3 +48,13 @@
   text-align: center;
   border: 1px solid rgb(8, 39, 8);
 }
+
+.orderDropdown {
+  background-color: rgb(214, 214, 214);
+  width: fit-content;
+  height: 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid rgb(8, 39, 8);
+}
