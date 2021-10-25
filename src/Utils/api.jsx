@@ -15,7 +15,6 @@ export const getAllReviews = async (sortBy) => {
           sort_by: sortBy
         },
       })
-      console.log(data.reviews)
     return data.reviews
 }
 

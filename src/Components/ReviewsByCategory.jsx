@@ -8,7 +8,6 @@ const ReviewsByCategory = () => {
     const [categoryReviews, setCategoryReviews] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [sortBy, setSortBy] = useState(null);
-    const [err, setErr] = useState(null);
     const {category} = useParams();
 
     useEffect(() => {
@@ -18,7 +17,7 @@ const ReviewsByCategory = () => {
         setIsLoading(false)
         })
         .catch((err) => {
-           setErr(true)
+           console.dir(err)
         })
     },   
  [category, sortBy]);

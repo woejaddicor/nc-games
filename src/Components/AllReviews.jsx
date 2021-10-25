@@ -16,9 +16,9 @@ const AllReviews = () => {
             setIsLoading(false)    
         })
         .catch((error) => {
-          setErr(true)
+          setErr(err)
         });
-    }, [sortBy]);
+    }, [sortBy, err]);
 
     const handleSort = (e) => {
         e.preventDefault()
@@ -31,7 +31,7 @@ const AllReviews = () => {
     return (
         <section className={styles.allReviews}>
                 <select className={styles.sortDropdown} name="sort-reviews" id="sort-reviews" onChange={handleSort}>
-                    <option selected disabled>Sort By</option>
+                    <option defaultValue disabled>Sort By</option>
                     <option value="created_at">Created At</option>
                     <option value="comment_count">Comment Count</option>
                     <option value="votes">Votes</option>
@@ -39,8 +39,8 @@ const AllReviews = () => {
             <ul className={styles.reviewsList}>
                 {reviews.map((review) => {
                     return (
-                      <button className={styles.reviewsButton}><Link className={styles.linkText} to={`/reviews/${review.review_id}`}>
-                        <li className={styles.reviewsList} key={review.review_id}>
+                      <button key={review.review_id} className={styles.reviewsButton}><Link className={styles.linkText} to={`/reviews/${review.review_id}`}>
+                        <li className={styles.reviewsList}>
                             <h3>{review.title}</h3>
                             <img
                                 className={styles.reviewImages}
