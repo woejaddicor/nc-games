@@ -28,7 +28,7 @@ const SingleReview = () => {
 
 
     useEffect(() => {
-        getComments(review_id, comment_id).then((commentsFromApi) => {
+        getComments(review_id).then((commentsFromApi) => {
             setComments(commentsFromApi);
         })
     }, [review_id]);

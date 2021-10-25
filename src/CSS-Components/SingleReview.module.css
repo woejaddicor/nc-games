@@ -28,7 +28,7 @@
   margin-bottom: 10px;
   border-radius: 10px;
   list-style: none;
-  background-image: url("https://catwithmonocle.com/wp-content/uploads/2020/03/ac-new-horizons-leaf-pattern-v2-1920x1080-1.jpg");
+  background-color: rgb(250, 250, 224);
 }
 
 .comments {
@@ -57,7 +57,7 @@
 }
 
 .commentsCollapsible {
-  background-color: rgb(245, 245, 230);
+  background-image: url("https://catwithmonocle.com/wp-content/uploads/2020/03/ac-new-horizons-leaf-pattern-v2-1920x1080-1.jpg");
   padding: 5px;
   border: 2px solid rgb(9, 34, 16);
   border-radius: 5px;

@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 function App() {
 
-  const [user, setUser] = useState('cooljmessy');
+  const [user, setUser] = useState('jessjelly');
 
   return (
   <UserContext.Provider value={{user, setUser}}>
