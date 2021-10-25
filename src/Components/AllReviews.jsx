@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getAllReviews } from "../Utils/api";
 import {Link} from 'react-router-dom';
 import styles from '../CSS-Components/AllReviews.module.css';
+import Collapsible from "react-collapsible";
 
 const AllReviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -41,15 +42,17 @@ const AllReviews = () => {
                     return (
                       <button key={review.review_id} className={styles.reviewsButton}><Link className={styles.linkText} to={`/reviews/${review.review_id}`}>
                         <li className={styles.reviewsList}>
-                            <h3>{review.title}</h3>
+                            <h2 className={styles.reviewTitle}>{review.title}</h2>
                             <img
                                 className={styles.reviewImages}
                                 alt={`${review.title}`}
                                 src={review.review_img_url}/>
+                            <Collapsible className={styles.Collapsible} trigger="See More">
                             <h3>{review.category}</h3>
                             <p>Created at: {review.created_at}</p>
                             <p>Comments: {Number(review.comment_count)}</p>
                             <p>Votes: {review.votes}</p>
+                            </Collapsible>
                         </li>
                       </Link></button>
                     );

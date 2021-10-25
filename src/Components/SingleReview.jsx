@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {getComments, getReview, updateVotes, updateComments} from '../Utils/api';
+import {getComments, getReview, updateVotes, updateComments, deleteComment} from '../Utils/api';
 import styles from '../CSS-Components/SingleReview.module.css';
 import Collapsible from 'react-collapsible'
 import { UserContext } from '../Contexts/UserContext';
@@ -8,7 +8,7 @@ import { UserContext } from '../Contexts/UserContext';
 const SingleReview = () => { 
     const [singleGame, setSingleGame] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
-    const {review_id} = useParams();
+    const {review_id, comment_id} = useParams();
     const [comments, setComments] = useState([]);
     const [votes, setVotes] = useState(0);
     const {user} = useContext(UserContext)
@@ -28,7 +28,7 @@ const SingleReview = () => {
 
 
     useEffect(() => {
-        getComments(review_id).then((commentsFromApi) => {
+        getComments(review_id, comment_id).then((commentsFromApi) => {
             setComments(commentsFromApi);
         })
     }, [review_id]);
@@ -45,7 +45,7 @@ const SingleReview = () => {
     }
 
     const handleDelete = () => {
-
+        deleteComment(comment_id)
     }
 
     if (isLoading) {
@@ -79,6 +79,7 @@ const SingleReview = () => {
                             <p>Author: {comment.author}</p>
                             <p>{comment.body}</p>
                             <h4>Comment Votes: {comment.votes}</h4>
+                            <p>{comment.created_at}</p>
                             <button disabled={user !== comment.author} onClick={handleDelete} className={styles.deleteCommentButton}>Delete Comment</button>
                         </li>
                     )
