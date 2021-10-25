@@ -45,7 +45,7 @@ const SingleReview = () => {
     }
 
     const handleDelete = () => {
-        deleteComment(comment_id)
+        deleteComment()
     }
 
     if (isLoading) {

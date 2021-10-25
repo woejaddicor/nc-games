@@ -2,7 +2,7 @@
   padding: 2px;
   font-family: Arial, Helvetica, sans-serif;
   word-spacing: 1px;
-  background-color: rgb(245, 245, 230);
+  background-image: url("https://catwithmonocle.com/wp-content/uploads/2020/03/ac-new-horizons-leaf-pattern-v2-1920x1080-1.jpg");
   border: 2px solid rgb(21, 41, 26);
   border-radius: 5px;
   margin: 8px;
@@ -28,6 +28,7 @@
   margin-bottom: 10px;
   border-radius: 10px;
   list-style: none;
+  background-image: url("https://catwithmonocle.com/wp-content/uploads/2020/03/ac-new-horizons-leaf-pattern-v2-1920x1080-1.jpg");
 }
 
 .comments {
