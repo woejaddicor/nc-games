@@ -58,7 +58,7 @@ const AllReviews = () => {
         </section>
     )  
   }
-}
+};
   
   export default AllReviews;
   
