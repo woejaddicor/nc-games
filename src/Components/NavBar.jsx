@@ -26,7 +26,7 @@ const NavBar = () => {
                     </li>
                  )
                 })}
-                <button className={styles.loginButton}><Link className={styles.loginButtonLink} to="/login">Login</Link></button>
+                <button className={styles.loginButton}><Link className={styles.loginButtonLink} to="/">Login</Link></button>
             </ul>
         </nav>
     )

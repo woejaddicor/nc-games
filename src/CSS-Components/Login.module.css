@@ -6,6 +6,7 @@
 
 .loginForm {
   margin-top: 35%;
+  display: inline-block flex;
 }
 
 .usernameBar {

@@ -31,7 +31,7 @@ function App() {
           <Route exact path="/reviews/:review_id">
             <SingleReview/>
           </Route>
-          <Route exact path="/login">
+          <Route exact path="/">
             <Login/>
           </Route>
           <Route>

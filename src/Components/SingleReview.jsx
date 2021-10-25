@@ -8,7 +8,7 @@ import { UserContext } from '../Contexts/UserContext';
 const SingleReview = () => { 
     const [singleGame, setSingleGame] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
-    const {review_id, comment_id} = useParams();
+    const {review_id} = useParams();
     const [comments, setComments] = useState([]);
     const [votes, setVotes] = useState(0);
     const {user} = useContext(UserContext)
