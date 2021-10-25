@@ -25,6 +25,7 @@
   margin-bottom: 5px;
   border-radius: 5px;
   border: 1px double black;
+  box-shadow: 2px 1px black;
 }
 
 .categoriesButton :hover {
@@ -37,6 +38,7 @@
   margin-bottom: 5px;
   border-radius: 5px;
   border: 1px double black;
+  box-shadow: 2px 1px black;
 }
 
 .loginButton :hover {

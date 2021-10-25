@@ -1,14 +1,14 @@
 .title {
-  background-color: rgb(6, 26, 5);
-  color: white;
-  padding: 10px;
-  font-family: g;
+  color: rgb(230, 253, 219);
+  font-size: larger;
+  font-weight: bolder;
+  font-family: "Poppins", sans-serif;
+  font-family: "Rajdhani", sans-serif;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 4px 2px rgb(5, 5, 5);
 }
 
-.title :hover {
-  color: rgb(166, 255, 166);
-}
-
-.loginForm {
-  color: rgb(166, 255, 166);
+.banner {
+  background-color: rgb(18, 58, 21);
+  padding: 5px;
 }

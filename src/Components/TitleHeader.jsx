@@ -3,9 +3,9 @@ import styles from '../CSS-Components/TitleHeader.module.css'
 
 const TitleHeader = () => {
     return (
-        <header className={styles.title}>
+        <header className={styles.banner}>
             <h1 className={styles.banner}><Link className={styles.title} to='/reviews'>NC-GAMES</Link></h1>
-            </header>
+        </header>
     );
 };
 
