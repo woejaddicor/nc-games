@@ -44,3 +44,7 @@ export const updateVotes = async (review_id) => {
 export const updateComments = async (review_id, username, body) => {
     await gamesApi.post(`/reviews/${review_id}/comments`, {username, body})
 }
+
+export const deleteComment = async (review_id) => {
+    await gamesApi.delete(`/reviews/${review_id}/comments`)
+}

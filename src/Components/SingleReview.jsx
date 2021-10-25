@@ -40,9 +40,12 @@ const SingleReview = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(postedComment, user, review_id);
         updateComments(review_id, user, postedComment)
         setPostedComment('')
+    }
+
+    const handleDelete = () => {
+
     }
 
     if (isLoading) {
@@ -76,6 +79,7 @@ const SingleReview = () => {
                             <p>Author: {comment.author}</p>
                             <p>{comment.body}</p>
                             <h4>Comment Votes: {comment.votes}</h4>
+                            <button disabled={user !== comment.author} onClick={handleDelete} className={styles.deleteCommentButton}>Delete Comment</button>
                         </li>
                     )
                 })}
