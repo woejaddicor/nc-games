@@ -1,6 +1,4 @@
 import styles from '../CSS-Components/Login.module.css'
-import { UserContext } from '../Contexts/UserContext';
-import {useContext} from 'react';
 
 
 const Login = () => {
