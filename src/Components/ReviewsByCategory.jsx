@@ -36,7 +36,6 @@ const ReviewsByCategory = () => {
             <select className={styles.sortDropdown} name="sort-reviews" id="sort-reviews" onChange={handleSort}>
                     <option defaultValue disabled>Sort By</option>
                     <option value="created_at">Created At</option>
-                    <option value="comment_count">Comment Count</option>
                     <option value="votes">Votes</option>
               </select>
             <ul className={styles.categoryReviewsList}>
